@@ -1,11 +1,42 @@
 package com.ufs.apibd.models;
 
-import java.time.LocalDateTime;
+import jakarta.persistence.*;
 
-public class userModel {
+import java.io.Serializable;
+import java.util.Date;
+import java.util.UUID;
+
+@Entity
+@Table(name = "USERS")
+public class UserModel implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID userId;
+    @Column
+    private String name;
+    @Column
     private int cpf;
-    private String nome;
-    private LocalDateTime dta_nascimeto;
+    @Column
+    private Date dtaNascimento;
+
+    public UUID getUserId() {
+        return userId;
+    }
+
+    public void setUserId(UUID userId) {
+        this.userId = userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getCpf() {
         return cpf;
@@ -15,19 +46,11 @@ public class userModel {
         this.cpf = cpf;
     }
 
-    public String getNome() {
-        return nome;
+    public Date getDtaNascimento() {
+        return dtaNascimento;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public LocalDateTime getDta_nascimeto() {
-        return dta_nascimeto;
-    }
-
-    public void setDta_nascimeto(LocalDateTime dta_nascimeto) {
-        this.dta_nascimeto = dta_nascimeto;
+    public void setDtaNascimento(Date dtaNascimento) {
+        this.dtaNascimento = dtaNascimento;
     }
 }
