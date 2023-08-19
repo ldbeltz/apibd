@@ -3,32 +3,18 @@ package com.ufs.apibd.models;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.UUID;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "USERS")
 public class UserModel implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID userId;
+    private long cpf;
     @Column
     private String name;
     @Column
-    private int cpf;
-    @Column
-    private Date dtaNascimento;
-
-    public UUID getUserId() {
-        return userId;
-    }
-
-    public void setUserId(UUID userId) {
-        this.userId = userId;
-    }
+    private LocalDate dtaNascimento;
 
     public String getName() {
         return name;
@@ -38,19 +24,19 @@ public class UserModel implements Serializable {
         this.name = name;
     }
 
-    public int getCpf() {
+    public long getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(long cpf) {
         this.cpf = cpf;
     }
 
-    public Date getDtaNascimento() {
+    public LocalDate getDtaNascimento() {
         return dtaNascimento;
     }
 
-    public void setDtaNascimento(Date dtaNascimento) {
+    public void setDtaNascimento(LocalDate dtaNascimento) {
         this.dtaNascimento = dtaNascimento;
     }
 }

@@ -2,26 +2,26 @@ package com.ufs.apibd.dtos;
 
 public class UserDto {
 
-    private String cpf;
+    private long cpf;
 
-    private String nome;
+    private String name;
 
     private String dtaNascimento;
 
-    public String getCpf() {
+    public long getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(long cpf) {
         this.cpf = cpf;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String nome) {
+        this.name = nome;
     }
 
     public String getDtaNascimento() {
